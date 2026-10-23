@@ -1,7 +1,7 @@
 {
   "name": "local-nemotron-bolt",
   "private": true,
-  "scripts": {
-    "pi": "bun scripts/pi.ts"
+  "bin": {
+    "bolt": "scripts/bolt.ts"
   }
 }

@@ -26,3 +26,9 @@ curl -fL --retry 3 \
   https://github.com/ggml-org/llama.cpp/releases/download/b11840/llama-b11840-bin-ubuntu-cuda-13.4-x64.tar.gz
 tar -xzf runtime/llama-b11840-cuda13.4.tar.gz -C runtime
 ```
+
+Link the `bolt` command:
+
+```bash
+bun link
+```

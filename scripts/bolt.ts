@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 import { mkdirSync, openSync, closeSync } from "node:fs";
 import { resolve, delimiter } from "node:path";
 
@@ -92,7 +93,7 @@ try {
   if (!ready) throw new Error(`Model startup timed out. See ${logPath}`);
   console.error(`Model ready at ${baseUrl}. Starting Pi; exiting Pi will release GPU memory.`);
   pi = Bun.spawn([piPath, "--offline", "--provider", "local-bolt", "--model", "nemotron-bolt", "--thinking", "off", ...process.argv.slice(2)], {
-    cwd: root, env: { ...process.env, PI_CODING_AGENT_DIR: agentDir },
+    cwd: process.cwd(), env: { ...process.env, PI_CODING_AGENT_DIR: agentDir },
     stdin: "inherit", stdout: "inherit", stderr: "inherit"
   });
   process.exitCode = await pi.exited;

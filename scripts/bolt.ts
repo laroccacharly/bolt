@@ -27,7 +27,7 @@ const port = reservation.port;
 reservation.stop(true);
 const baseUrl = `http://127.0.0.1:${port}`;
 const apiKey = crypto.randomUUID();
-const context = 32768;
+const context = 131072;
 await Bun.write(resolve(agentDir, "models.json"), JSON.stringify({
   providers: {
     "local-bolt": {
